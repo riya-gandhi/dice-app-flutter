@@ -1,31 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:dice_app/gradient_container.dart';
 
 void main() {
   runApp(
     const MaterialApp(
       home: Scaffold(
-        body: GradientContainer()
+        body: GradientContainer(list: [Color.fromARGB(0, 10, 239, 247), Color.fromARGB(249, 234, 234, 234)],)
       ),
     ),
   );
-}
-
-class GradientContainer extends StatelessWidget{
-  const GradientContainer({super.key});
-   
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(colors: [Colors.red, Colors.white10]),
-          ),
-          child: const Center(
-            child: Text(
-              "Riya Gandhi",
-              style: TextStyle(fontSize: 20),
-            ),
-          ),
-        );
-  }
-  
 }
