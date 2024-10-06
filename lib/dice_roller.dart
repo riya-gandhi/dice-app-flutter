@@ -11,12 +11,11 @@ class DiceRoller extends StatefulWidget {
 }
 
 class _DiceRoller extends State<DiceRoller> {
-  var activeDiceImage = 'assets/images/dice-2.png';
+  var currentRoll = 2;
 
   void rollDice() {
-    var diceRoll = Random().nextInt(6) + 1;
     setState(() {
-      activeDiceImage = 'assets/images/dice-$diceRoll.png';
+      currentRoll = Random().nextInt(6) + 1;
     });
   }
 
@@ -26,7 +25,7 @@ class _DiceRoller extends State<DiceRoller> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Image.asset(
-          activeDiceImage,
+          'assets/images/dice-$currentRoll.png',
           width: 200,
         ),
         const SizedBox(height: 20),
